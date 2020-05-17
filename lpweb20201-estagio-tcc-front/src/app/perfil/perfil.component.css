@@ -1,9 +1,13 @@
 .campo {
-    color: gray;
-    font-weight: bold;
-    font-size: small;
+  color: gray;
+  font-weight: bold;
+  font-size: small;
 }
 
 .valor {
-    font-size: large;
+  font-size: large;
+}
+
+#edit {
+  margin-left: auto;
 }

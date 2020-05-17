@@ -37,7 +37,12 @@
 
     <div class="card" *ngIf="perfil">
       <div class="card-body">
-        <h5 class="card-title">Você possui um perfil</h5>
+        <div class="row ml-1">
+          <h5 class="card-title">Você possui um perfil</h5>
+          <a id="edit" [routerLink]="['/editar-perfil']">
+            <i class="far fa-edit"></i>
+          </a>
+        </div>
 
         <h6 class="card-subtitle mt-4">Informações do registro</h6>
         <div class="row">

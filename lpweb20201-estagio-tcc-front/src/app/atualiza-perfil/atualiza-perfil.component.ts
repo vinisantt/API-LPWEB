@@ -1,20 +1,20 @@
+import { AtualizacaoService } from './../atualizacao.service';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
-import { CadastroPerfilService } from '../cadastro-perfil.service';
 import { PerfilService } from '../perfil.service';
 
 @Component({
-  selector: 'app-cadastro',
-  templateUrl: './cadastro.component.html',
-  styleUrls: ['./cadastro.component.css'],
+  selector: 'app-atualiza-perfil',
+  templateUrl: './atualiza-perfil.component.html',
+  styleUrls: ['./atualiza-perfil.component.css'],
 })
-export class CadastroComponent implements OnInit {
+export class AtualizaPerfilComponent implements OnInit {
   perfil: any;
   temPerfil = null;
 
   constructor(
-    public cadastro$: CadastroPerfilService,
+    public atualiza$: AtualizacaoService,
     public auth$: AuthService,
     private router: Router,
     private perfil$: PerfilService
@@ -63,11 +63,22 @@ export class CadastroComponent implements OnInit {
     this.user = this.auth$.user();
     if (this.user) {
       this.perfil$.perfilLogado().subscribe(
-        (dados) => (this.perfil = dados),
+        (dados) => {
+          this.perfil = dados;
+          this.nome = this.perfil.nome;
+          this.sexo = this.perfil.sexo;
+          this.cpf = this.perfil.cpf;
+          this.telefone = this.perfil.telefone;
+          this.endereco = this.perfil.endereco;
+          this.estado_uf = this.perfil.estado_uf;
+          this.cidade = this.perfil.cidade;
+          this.cep = this.perfil.cep;
+        },
         (erro) => (this.temPerfil = false)
       );
     } else {
       this.router.navigate(['/login']);
+      console.log('teste');
     }
   }
 
@@ -83,6 +94,6 @@ export class CadastroComponent implements OnInit {
       cidade: this.cidade,
       cep: this.cep,
     };
-    this.cadastro$.cadastrarPerfil(dados);
+    this.atualiza$.atualizarPerfil(dados, this.perfil);
   }
 }

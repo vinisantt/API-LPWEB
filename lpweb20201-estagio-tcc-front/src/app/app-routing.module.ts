@@ -1,3 +1,4 @@
+import { AtualizaPerfilComponent } from './atualiza-perfil/atualiza-perfil.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'perfil', component: PerfilComponent },
   { path: 'sobre', component: SobreComponent },
   { path: 'cadastrar-perfil', component: CadastroComponent },
+  { path: 'editar-perfil', component: AtualizaPerfilComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: PaginaNaoEncontradaComponent },
 ];

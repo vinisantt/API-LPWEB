@@ -1,9 +1,9 @@
 <div class="container">
   <br />
-  <h1>Cadastrar Perfil</h1>
+  <h1>Editar Perfil</h1>
 
   <hr />
-  <form (submit)="enviaDados()" #cadastroPerfil="ngForm">
+  <form (submit)="enviaDados()" #Perfil="ngForm">
     <div class="form-group">
       <label for="nome">Nome: <span class="requerido">*</span></label>
       <input
@@ -112,16 +112,15 @@
     </div>
 
     <button
-      [disabled]="cadastroPerfil.invalid"
+      [disabled]="Perfil.invalid"
       class="btn btn-primary"
       data-toggle="modal"
       data-target="#ignismyModal"
     >
-      Salvar
+      Atualizar
     </button>
   </form>
 </div>
-
 <div class="modal fade" id="ignismyModal" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -143,10 +142,10 @@
             src="http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png"
             alt=""
           />
-          <h1>Perfil Criado!</h1>
+          <h1>Perfil Atualizado!</h1>
           <p>
-            Seu perfil foi criado com sucesso, volte para a tela te perfis para
-            conferir.
+            Seu perfil foi atualizado com sucesso, volte para a tela te perfis
+            para conferir.
           </p>
           <button
             class="btn btn-primary"

@@ -78,7 +78,6 @@ export class AtualizaPerfilComponent implements OnInit {
       );
     } else {
       this.router.navigate(['/login']);
-      console.log('teste');
     }
   }
 

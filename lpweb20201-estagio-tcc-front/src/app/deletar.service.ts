@@ -6,14 +6,13 @@ import { AuthService } from './auth.service';
 @Injectable({
   providedIn: 'root',
 })
-export class AtualizacaoService {
+export class DeletarService {
   constructor(private http: HttpClient, private auth$: AuthService) {}
 
-  atualizarPerfil(dados: any, perfil: any) {
+  deletarPerfil(perfil: any) {
     this.http
-      .put(
+      .delete(
         environment.API_URL.concat(`perfis/${perfil.id}/`),
-        dados,
         this.auth$.httpOptions()
       )
       .subscribe();

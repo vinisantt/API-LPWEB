@@ -115,21 +115,21 @@
       [disabled]="cadastroPerfil.invalid"
       class="btn btn-primary"
       data-toggle="modal"
-      data-target="#ignismyModal"
+      data-target="#ModalCadastrar"
     >
       Salvar
     </button>
   </form>
 </div>
 
-<div class="modal fade" id="ignismyModal" role="dialog">
+<div class="modal fade" id="ModalCadastrar" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button
           class="close"
           data-dismiss="modal"
-          data-target="#ignismyModal"
+          data-target="#ModalCadastrar"
           [routerLink]="['/perfil']"
           aria-label=""
         >
@@ -152,7 +152,7 @@
             class="btn btn-primary"
             data-dismiss="modal"
             [routerLink]="['/perfil']"
-            data-target="#ignismyModal"
+            data-target="#ModalCadastrar"
           >
             Meu perfil
           </button>

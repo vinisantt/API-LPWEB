@@ -42,6 +42,15 @@
           <a id="edit" [routerLink]="['/editar-perfil']">
             <i class="far fa-edit"></i>
           </a>
+          <a
+            class="ml-1"
+            data-toggle="modal"
+            data-target="#ModalDeletar"
+            id="delete"
+            href="#"
+          >
+            <i class="fa fa-trash"></i>
+          </a>
         </div>
 
         <h6 class="card-subtitle mt-4">Informações do registro</h6>
@@ -123,6 +132,51 @@
         >
           Sim, eu quero !
         </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal aq, pra dps tento deixar isso reutilizável -->
+<div class="modal fade" id="ModalDeletar" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+          class="close"
+          data-dismiss="modal"
+          data-target="#ModalDeletar"
+          aria-label=""
+        >
+          <span>×</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="thank-you-pop">
+          <img
+            src="https://icons.iconarchive.com/icons/custom-icon-design/flatastic-9/256/Warning-icon.png"
+            alt=""
+          />
+          <h1>Deseja deletar seu perfil?</h1>
+          <br />
+          <div class="row justify-content-center">
+            <button
+              class="btn btn-success mr-3"
+              data-dismiss="modal"
+              data-target="#ModalDeletar"
+              (click)="deletarPerfil()"
+            >
+              Sim
+            </button>
+            <button
+              class="btn btn-danger ml-3"
+              data-dismiss="modal"
+              data-target="#ModalDeletar"
+            >
+              Não
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
